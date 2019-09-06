@@ -1,0 +1,186 @@
+.form-group{
+    width: 350px;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    margin: 5px;
+}
+
+.form-group input{
+    width: 100%;
+    height: 100%;
+    color: #595f6e;
+    padding-top: 15.5px;
+    border: none;
+    outline: none;
+}
+
+.form-group label{
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid gray;
+}
+
+.form-group label::after{
+
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 1.4px solid #146aa0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content-name {
+
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus + .label-name .content-name, 
+.form-group input:valid + .label-name .content-name{
+
+    transform: translateY(-100%);
+    font-size: 14px;
+    color: #146aa0;
+    /*font-weight: bold;*/
+}
+
+.form-group input:focus + .label-name::after, 
+.form-group input:valid + .label-name::after{
+    transform: translateX(0%);
+}
+
+
+
+#contentX{
+    background: #e7eef5;
+    height: 100px;
+    display: flex;
+    flex-direction: row; /*row, column, row-reverse, column-reverse*/
+    flex-wrap: wrap; /* wrap, wrap-reverse, no-wrap faz a div quebrar de acordo com o tamnho da tela*/
+    justify-content: space-between; /* flex-start, flex-and, space-around, space-between; difine o lado e o espaçamento*/
+    align-items: flex-start; /*flex-start, flex-and, center, strech, baseline; define por qual altura começa*/
+    /*align-content: */
+    /*flex-flow: */
+}
+
+.itemX{
+    flex-grow: 0; /*acupa o resto da largura da div;*/
+    flex-shrink: 1; /*econlhe a div*/ 
+    flex-basis: auto; /*define um width de cada elemento caso nao tenha*/
+    /*height: 20px;*/
+    /*width: 100px;*/
+    color: black;
+    /*-webkit-box-shadow: 0px 2px 8px -1px rgba(0,0,0,0.24);*/
+    background: white;
+    margin: 5px;
+};
+
+
+body, ul, li, p {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.header {
+    background: #1d1e20;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.menu{
+    display: flex;
+}
+
+.menu li{
+    margin-left: 10px;
+}
+
+menu li a{
+    display: block;
+    padding: 10px;
+}
+
+h1{
+    text-align: center;
+    margin-top: 100px;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto; /*alinha ao centro os itens ao passa do max width*/
+}
+
+.flex > div {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
+
+.grid > div:nth-child(n + 4){
+
+    display: grid;
+    grid-template-columns:  1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.grid > div.anucio{
+    grid-column: 1;
+    grid-row: 2 / 5;
+    display: block;
+}
+
+@media (max-width: 600px) {
+    .grid{
+        grid-template-columns:  1fr 1fr;
+    }
+
+    .grid > div:nth-child(n + 4){
+        display: block;
+    }
+
+    .grid > div.anucio{
+        grid-column: auto;
+        grid-row: auto;
+        order: -1;
+    }
+}
