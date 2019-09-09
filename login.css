@@ -42,7 +42,7 @@ body{
   left: 0;
   width: 100%;
   height: 30rem;
-  background-color: #066aae;
+  background: linear-gradient(120deg, #2b414f, #3498db, #2b414f);
   border-bottom-right-radius: 100%;
   border-bottom-left-radius: 100%;
   z-index: -1;
